@@ -28,6 +28,10 @@
   --color-text-faint: #475569;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .btn-clip {
     clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
@@ -46,4 +50,23 @@
 
 .animate-blink {
   animation: blink 1s step-end infinite;
+}
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)); /* Brillo más fuerte */
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.4));
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 5s ease infinite;
 }

@@ -22,6 +22,18 @@ function Hero() {
     return (
         <>
             <section className="relative min-h-screen flex items-center bg-bg text-text overflow-hidden">
+
+                <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                    {/* Glow */}
+                    <div className="absolute top-[30%] right-[-10%] w-150 h-150 bg-violet/30 blur-[200px] opacity-50 rounded-full"/>
+                    <div className="absolute bottom-[10%] left-[-10%] w-125 h-125 bg-blue-cold/20 blur-[200px] opacity-50 rounded-full"/>
+
+                    {/* Fondo */}
+                    <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[20px_20px]"/>
+
+                </div>
+
+                
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -31,14 +43,14 @@ function Hero() {
                     }}
                     className="container mx-auto py-30 px-10 sm:px-10 lg:px-0 flex flex-col items-start gap-6"
                 >
-
+                    
                     <span className="text-violet-bright uppercase tracking-wider sm:text-xs">
                         ─── Disponible para oportunidades
                     </span>
                     
                     <h1 className="font-title text-5xl lg:text-7xl font-extrabold hover:tracking-wide transition-all duration-300">
                         Alina <br />
-                        <span className="bg-linear-to-r from-violet-bright to-blue-cold bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.6)]">
+                        <span className="bg-linear-to-r from-violet-bright via-rose to-blue-cold bg-size-[300%_auto] bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_15px_rgba(168,85,247,0.6)]">
                             Marquez
                         </span>
                     </h1>
