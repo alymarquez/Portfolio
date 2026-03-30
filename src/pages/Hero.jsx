@@ -1,4 +1,23 @@
+import { useEffect, useState } from "react";
+
 function Hero() {
+    const fullText = "DESARROLLADORA FULL STACK";
+    const [text, setText] = useState("");
+    const [index, setIndex] = useState(0);
+
+    // Efecto de escritura
+    useEffect(() => {
+        if(index < fullText.length) {
+            const timeout = setTimeout(() => {
+                setText((prev) => prev + fullText[index]);
+                setIndex(index + 1);
+            }, 60);
+
+            return () => clearTimeout(timeout);
+        }
+
+    }, [index]);
+
     return (
         <>
             <section className="min-h-screen flex items-center bg-bg text-text">
@@ -14,7 +33,8 @@ function Hero() {
                     </h1>
 
                     <span className="text-text-dim font-mono uppercase tracking-widest text-md">
-                        DESARROLLADORA FULL STACK
+                        {text}
+                        <span className="animate-blink ml-1">|</span>
                     </span>
 
                     <p className="text-text-dim font-sans text-md max-w-lg w-full">
