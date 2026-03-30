@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
 
 function Hero() {
     const fullText = "DESARROLLADORA FULL STACK";
@@ -20,14 +21,24 @@ function Hero() {
 
     return (
         <>
-            <section className="min-h-screen flex items-center bg-bg text-text">
-                <div className="container mx-auto py-30 px-10 sm:px-10 lg:px-0 flex flex-col items-start gap-6">
+            <section className="relative min-h-screen flex items-center bg-bg text-text overflow-hidden">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.8,
+                        ease: "easeOut"
+                    }}
+                    className="container mx-auto py-30 px-10 sm:px-10 lg:px-0 flex flex-col items-start gap-6"
+                >
+
                     <span className="text-violet-bright uppercase tracking-wider sm:text-xs">
-                        Disponible para oportunidades
+                        ─── Disponible para oportunidades
                     </span>
-                    <h1 className="font-title text-5xl lg:text-7xl font-extrabold">
+                    
+                    <h1 className="font-title text-5xl lg:text-7xl font-extrabold hover:tracking-wide transition-all duration-300">
                         Alina <br />
-                        <span className="bg-linear-to-r from-violet-bright to-blue-cold bg-clip-text text-transparent">
+                        <span className="bg-linear-to-r from-violet-bright to-blue-cold bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(168,85,247,0.6)]">
                             Marquez
                         </span>
                     </h1>
@@ -63,11 +74,13 @@ function Hero() {
                             ></span>
                         </a>
 
-                        <button className="border border-violet-bright text-violet-bright bg-violet-bright/10 px-6 py-3 font-medium hover:border-violet-bright/50 hover:bg-violet-bright/20 transition-colors">
-                            Contactar
-                        </button>
+                        <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+                            <button className="border border-violet-bright text-violet-bright bg-violet-bright/10 px-6 py-3 font-medium hover:border-violet-bright/50 hover:bg-violet-bright/20 transition-colors">
+                                Contactar
+                            </button>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </>
     );
