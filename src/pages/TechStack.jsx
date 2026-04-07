@@ -42,19 +42,19 @@ function TechStack() {
         >
 
             {/* CAPA PARALLAX FIXED */}
-            <div
-                className="fixed inset-0 z-0 pointer-events-none"
-            >
-                {/* Círculo de luz */}
-                <div className="absolute top-[-10%] left-[-10%] w-150 h-150 bg-violet-bright/10 blur-[120px] rounded-full" />
+            <div 
+                className="absolute inset-0 z-0 pointer-events-none opacity-[0.12]"
+                style={{
+                    backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
+                    backgroundSize: '50px 50px',
+                    backgroundAttachment: 'fixed',
+                    backgroundPosition: 'center'
+                }}
+            />
 
-                {/* Patrón de puntos */}
-                <div className="absolute inset-0 opacity-[0.15]"
-                    style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '50px 50px' }}
-                />
-
-                <div className="absolute bottom-[10%] right-[-5%] w-100 h-100 bg-violet-bright/5 blur-[100px] rounded-full" />
-            </div>
+            {/* Círculo de luz */}
+            <div className="absolute top-[-10%] left-[-10%] w-150 h-150 bg-violet-bright/10 blur-[120px] rounded-full" />
+            <div className="absolute bottom-[10%] right-[-5%] w-100 h-100 bg-violet-bright/5 blur-[100px] rounded-full" />
 
             <div className="container mx-auto max-w-6xl relative z-10">
 
