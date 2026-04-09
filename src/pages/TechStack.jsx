@@ -2,126 +2,128 @@ import { motion } from "framer-motion";
 import {
     SiMongodb, SiExpress, SiReact, SiNodedotjs,
     SiPostgresql, SiJavascript, SiPython, SiGit,
-    SiSequelize, SiMongoose, SiPostman, SiFigma
+    SiSequelize, SiMongoose, SiPostman, SiFigma,
 } from "react-icons/si";
 
 const TECHS = [
-    { name: "Node.js", icon: <SiNodedotjs />, color: "text-[#339933]" },
-    { name: "Express", icon: <SiExpress />, color: "text-white" },
-    { name: "JavaScript", icon: <SiJavascript />, color: "text-[#F7DF1E]" },
-    { name: "React", icon: <SiReact />, color: "text-[#61DAFB]" },
-    { name: "Python", icon: <SiPython />, color: "text-[#3776AB]" },
-    { name: "PostgreSQL", icon: <SiPostgresql />, color: "text-[#4169E1]" },
-    { name: "MongoDB", icon: <SiMongodb />, color: "text-[#47A248]" },
-    { name: "Sequelize", icon: <SiSequelize />, color: "text-[#52B0E7]" },
-    { name: "Mongoose", icon: <SiMongoose />, color: "text-[#880000]" },
-    { name: "Postman", icon: <SiPostman />, color: "text-[#FF6C37]" },
-    { name: "Git", icon: <SiGit />, color: "text-[#F05032]" },
-    { name: "Figma", icon: <SiFigma />, color: "text-[#F24E1E]" },
+    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+    { name: "Express", icon: SiExpress, color: "#e2e8f0" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "React", icon: SiReact, color: "#61DAFB" },
+    { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+    { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    { name: "Sequelize", icon: SiSequelize, color: "#52B0E7" },
+    { name: "Mongoose", icon: SiMongoose, color: "#c0392b" },
+    { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+    { name: "Git", icon: SiGit, color: "#F05032" },
+    { name: "Figma", icon: SiFigma, color: "#F24E1E" },
 ];
 
 const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.05 },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.045 } },
 };
 
 const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 16, opacity: 0 },
     visible: { y: 0, opacity: 1 },
 };
 
 function TechStack() {
-
     return (
         <section
             id="stack"
-            className="relative min-h-screen flex flex-col justify-center bg-bg text-text px-6 md:px-10 py-24 overflow-hidden"
+            className="relative min-h-screen flex flex-col justify-center bg-bg text-text px-6 md:px-10 lg:px-20 py-28 overflow-hidden"
         >
 
-            {/* CAPA PARALLAX FIXED */}
-            <div 
-                className="absolute inset-0 z-0 pointer-events-none opacity-[0.12]"
+            <div
+                className="absolute inset-0 z-0 pointer-events-none opacity-[0.10]"
                 style={{
-                    backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)',
-                    backgroundSize: '50px 50px',
-                    backgroundAttachment: 'fixed',
-                    backgroundPosition: 'center'
+                    backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
+                    backgroundSize: "50px 50px",
+                    backgroundAttachment: "fixed",
                 }}
             />
-
-            {/* Círculo de luz */}
-            <div className="absolute top-[-10%] left-[-10%] w-150 h-150 bg-violet-bright/10 blur-[120px] rounded-full" />
-            <div className="absolute bottom-[10%] right-[-5%] w-100 h-100 bg-violet-bright/5 blur-[100px] rounded-full" />
+            {/* Glows */}
+            <div className="absolute top-[-10%] left-[-10%] w-150 h-150 bg-violet-bright/8 blur-[130px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-[5%] right-[-5%] w-100 h-100 bg-blue-cold/5 blur-[110px] rounded-full pointer-events-none" />
 
             <div className="container mx-auto max-w-6xl relative z-10">
 
-                {/* Header */}
+                {/* Section header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-4 mb-16"
+                    className="flex items-center gap-4 mb-20"
                 >
-                    <span className="font-mono text-[10px] tracking-[0.3em] text-violet-bright uppercase">Stack</span>
-                    <div className="h-px w-20 md:w-40 bg-linear-to-r from-violet-bright/40 to-transparent"></div>
-                    <span className="font-mono text-[10px] text-text-dim/30">02</span>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-violet-bright">02</span>
+                    <div className="h-px w-10 bg-violet-bright/30" />
+                    <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-text-dim/40">Stack</span>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 
                     {/* Texto */}
-                    <div>
-                        <h2 className="font-title text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                            Herramientas y <br />
-                            <span className="text-violet-bright font-light italic">tecnologías.</span>
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        viewport={{ once: true }}
+                    >
+                        <h2 className="font-title text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-8">
+                            Herramientas y{" "}
+                            <span className="text-violet-bright font-light italic block mt-1">tecnologías.</span>
                         </h2>
-                        <div className="text-slate-400 text-[14px] leading-[1.8] font-light max-w-sm space-y-4 border-l border-white/5 pl-6">
+                        <div className="text-text-dim text-sm leading-[1.9] font-light max-w-xs space-y-3 border-l border-white/5 pl-6">
                             <p>
-                                Especializada en <span className="text-text">Backend</span> bajo stacks MERN y PERN. Manejo de lógica robusta con Node.js, Express y Python.
-                            </p>
-                            <p>
-                                Gestión de bases de datos mediante <span className="text-text">ORMs (Sequelize/Mongoose)</span> y diseño de REST APIs eficientes.
+                                Stack principal <span className="text-text font-normal">MERN / PERN</span>. Foco en backend con Node.js, Express y Javascript.
+                                Gestión de bases de datos mediante <span className="text-text">ORMs (Sequelize/Mongoose)</span>.
                             </p>
                             <p>
                                 Flujo de trabajo con <span className="text-text font-normal">Git, Postman y Figma</span> para el diseño y testing de soluciones.
                             </p>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    {/* Grid de Iconos */}
+                    {/* Grid de íconos */}
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4"
+                        className="grid grid-cols-3 sm:grid-cols-4 gap-8"
                     >
-                        {TECHS.map((tech) => (
-                            <motion.div
-                                key={tech.name}
-                                variants={itemVariants}
-                                whileHover={{
-                                    y: -5,
-                                    backgroundColor: "rgba(139, 92, 246, 0.05)",
-                                    borderColor: "rgba(139, 92, 246, 0.3)"
-                                }}
-                                className="group relative flex flex-col items-center justify-center p-5 bg-white/2 border border-white/5 rounded-sm backdrop-blur-sm transition-all duration-300"
-                            >
-                                <div className={`text-2xl md:text-3xl text-text-dim/40 transition-colors duration-300 group-hover:${tech.color}`}>
-                                    {tech.icon}
-                                </div>
+                        {TECHS.map((tech) => {
+                            const Icon = tech.icon;
+                            const safeKey = tech.name.replace(/\./g, "");
+                            return (
+                                <motion.div
+                                    key={tech.name}
+                                    variants={itemVariants}
+                                    whileHover={{ y: -4, borderColor: "rgba(139,92,246,0.3)" }}
+                                    className={`group tech-${safeKey} relative flex flex-col items-center justify-center p-4 bg-white/2 border border-white/5 rounded-sm backdrop-blur-sm transition-all duration-300 cursor-default`}
+                                >
+                                    {/* Inyección de color real en hover — Tailwind no puede purgar */}
+                                    <style>{`.tech-${safeKey}:hover .ti { color: ${tech.color} !important; }`}</style>
 
-                                <span className="mt-3 font-mono text-[9px] uppercase tracking-widest text-text-dim/50 group-hover:text-text transition-colors text-center">
-                                    {tech.name}
-                                </span>
+                                    <Icon
+                                        className="ti text-xl md:text-2xl transition-colors duration-300"
+                                        style={{ color: "rgba(148,163,184,0.35)" }}
+                                    />
+                                    <span className="mt-2.5 font-mono text-[8px] uppercase tracking-widest text-text-dim/40 group-hover:text-text/60 transition-colors text-center">
+                                        {tech.name}
+                                    </span>
 
-                                {/* Glow decorativo hover */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none bg-radial from-violet-bright/10 to-transparent blur-xl" />
-                            </motion.div>
-                        ))}
+                                    {/* Glow con color del tech */}
+                                    <div
+                                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-sm"
+                                        style={{ background: `radial-gradient(circle at center, ${tech.color}14 0%, transparent 70%)` }}
+                                    />
+                                </motion.div>
+                            );
+                        })}
                     </motion.div>
 
                 </div>
