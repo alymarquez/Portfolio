@@ -44,7 +44,7 @@ function Hero() {
                         <span className="font-mono text-[9px] uppercase tracking-[0.35em] text-text-dim">Disponible para oportunidades</span>
                     </motion.div>
             
-                    <h1 className="pointer-events-auto font-title text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-none tracking-tight hover:tracking-wide transition-all duration-500">
+                    <h1 className="pointer-events-auto font-title text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-none tracking-tight hover:tracking-wide transition-all duration-500">
                         Alina{" "}
                         <span className="bg-linear-to-r from-violet-bright via-rose to-blue-cold bg-size-[300%_auto] bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_0_20px_rgba(168,85,247,0.5)]">
                         Marquez
