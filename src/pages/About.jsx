@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMapPin, FiCalendar, FiBookOpen } from "react-icons/fi";
-import fotoMia from "src/assets/fotomia.png";
+import fotoMia from "../assets/fotomia.png";
 
 const FACTS = [
   { icon: FiMapPin, label: "Ubicación", value: "Haedo, Buenos Aires" },
